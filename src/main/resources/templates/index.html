@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-    <h1>Hello, Spring!</h1>
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<nav th:replace="fragments :: header"></nav>
 </body>
 </html>
