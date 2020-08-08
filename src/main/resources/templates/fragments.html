@@ -13,8 +13,28 @@
     <ul class="nav">
         <li class="nav-item"><a class="nav-link" href="/events">All Events</a></li>
         <li class="nav-item"><a class="nav-link" href="/events/create">Create Event</a></li>
+        <li class="nav-item"><a class="nav-link" href="/events/delete">Delete Event</a></li>
     </ul>
 </nav>
+
+<div th:fragment="eventTable">
+    <h2 th:if="${events} and ${!(events.size() > 0)}">No events to display</h2>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tr th:each="event : ${events}">
+            <td th:text="${event.key}"></td>
+            <td th:text="${event.value.name}"></td>
+            <td th:text="${event.value.description}"></td>
+        </tr>
+    </table>
+</div>
 
 </body>
 </html>
